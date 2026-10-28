@@ -1,0 +1,23 @@
+{
+  "status": "PASSED",
+  "recorded_at": "2026-10-28T16:58:57.884957+00:00",
+  "python": "3.12.8",
+  "tests": {
+    "passed": 53,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "gates": {
+    "lint": true,
+    "format": true,
+    "dependencies": true,
+    "dependency_audit": true,
+    "pytest": true
+  },
+  "database_scope": "SQLite and pure rules",
+  "postgres_gate": "NOT_RUN",
+  "source_sha256": "718901b2c71a56242095c5adc3e4b78cf4288dd08f5b61564b9ca940853ef1f0",
+  "assistance": "AI-assisted portfolio project",
+  "limits": "Synthetic data; no production credit decisions or external services."
+}

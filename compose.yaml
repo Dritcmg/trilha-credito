@@ -1,0 +1,43 @@
+name: trilha-credito
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: trilha_test
+      POSTGRES_USER: trilha
+      POSTGRES_PASSWORD: ${TRILHA_DB_PASSWORD:?generate a local password}
+    ports:
+      - "127.0.0.1:54363:5432"
+    volumes:
+      - trilha_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trilha -d trilha_test"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  api:
+    build: .
+    command: ["sh", "-c", "alembic upgrade head && uvicorn trilha.api:create_app --factory --host 0.0.0.0 --port 8000 --no-access-log"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://trilha:${TRILHA_DB_PASSWORD:?required}@db:5432/trilha_test
+      TRILHA_CREDENTIALS: ${TRILHA_CREDENTIALS:?generate local credentials}
+    ports:
+      - "127.0.0.1:8003:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  worker:
+    build: .
+    command: ["python", "-m", "trilha.worker"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://trilha:${TRILHA_DB_PASSWORD:?required}@db:5432/trilha_test
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  trilha_data:

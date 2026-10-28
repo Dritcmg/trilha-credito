@@ -1,0 +1,214 @@
+[
+  {
+    "class": "tests.test_api",
+    "name": "test_end_to_end_intake_worker_and_reconciliation"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_document_deduplicates_and_tenants_are_independent"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_no_auth_and_bad_auth"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_reader_cannot_write"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_cross_tenant_never_sees_document[]"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_cross_tenant_never_sees_document[/audit]"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_cross_tenant_never_sees_document[/review]"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_cross_tenant_never_sees_document[/reconciliations]"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_unknown_requires_reviewer_and_cannot_be_reapproved"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_pending_cannot_reconcile"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_idempotency_replay_and_conflict"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_payment_reference_conflict_rolls_back_entire_request"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_replay_payment_in_new_snapshot_not_double_counted"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_worker_transaction_rollback_and_retry"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_poison_job_goes_to_review_after_three_failures"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_real_pdf_text_is_extracted_and_processed"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_body_limit_invalid_type_and_validation_redaction"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_readiness_request_ids_metrics_and_log_redaction"
+  },
+  {
+    "class": "tests.test_api",
+    "name": "test_pending_job_survives_database_engine_restart"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_month_end_is_anchored[2026-01-31-1-2026-02-28]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_month_end_is_anchored[2026-01-31-2-2026-03-31]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_month_end_is_anchored[2028-01-31-1-2028-02-29]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_month_end_is_anchored[2026-12-15-1-2027-01-15]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[0.00]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[-1.00]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[NaN]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[Infinity]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[1.001]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[1.1]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_money_rejects_invalid_or_float[True]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_two_layouts_produce_identical_facts"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_ambiguous_invalid_or_unknown_requires_review[scanned image]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_ambiguous_invalid_or_unknown_requires_review[text1]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_ambiguous_invalid_or_unknown_requires_review[text2]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_ambiguous_invalid_or_unknown_requires_review[text3]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_ambiguous_invalid_or_unknown_requires_review[text4]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_reconciliation_classifies_exact_money[400.00-matched-0.00]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_reconciliation_classifies_exact_money[200.00-underpaid--200.00]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_reconciliation_classifies_exact_money[401.00-overpaid-1.00]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_future_payment_is_excluded_from_as_of_snapshot"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_partial_payments_sum_without_float_error"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_duplicate_payment_reference_is_invalid"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_reference_oracle_uses_independent_integer_cents"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_pdf_invalid_or_oversize_rejected[not a pdf]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_pdf_invalid_or_oversize_rejected[%PDF-invalid]"
+  },
+  {
+    "class": "tests.test_domain",
+    "name": "test_pdf_invalid_or_oversize_rejected[content2]"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_calendar_boundary_is_422_not_500"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_last_representable_single_installment_is_valid"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_pdf_value_error_is_redacted"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_readiness_fails_when_schema_missing"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_worker_once_exit_is_failure_when_schema_missing"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_duplicate_logical_contract_requires_review"
+  },
+  {
+    "class": "tests.test_regressions",
+    "name": "test_sync_database_does_not_block_http_event_loop"
+  }
+]
