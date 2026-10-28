@@ -54,3 +54,7 @@ O segundo comando exige PostgreSQL real e recusa skips. Cada teste usa um schema
 Leia [contexto público e hipótese](docs/CONTEXT.md), [decisões e arquitetura](docs/DECISIONS.md), [ameaças e operação](docs/OPERATIONS.md), [mapa de competências](docs/COMPETENCIES.md) e [assistência de IA](AI_ASSISTANCE.md).
 
 Use somente fixtures sintéticas. A extração é determinística e limitada a dois layouts, não generaliza contratos de instituições reais. PDF não confiável exigiria sandbox de processamento e controles adicionais. A autenticação local não implementa SSO, rotação centralizada ou identidade corporativa; há auditoria de ações, não certificação regulatória. Métricas são por processo. Não há Redis, broker ou LLM inseridos sem necessidade: PostgreSQL é a fonte de estado; interpretação e validação ficam explícitas.
+
+## Verificação remota da revisão publicada
+
+A [execução de CI](https://github.com/Dritcmg/trilha-credito/actions/runs/40731638148) aprovou **58 testes, sem falhas ou skips**, além de lint e auditoria de dependências. O gate inclui PostgreSQL real. O artefato remoto foi baixado e seu fingerprint conferido com a fonte local. Consulte [evidence/ci-verification.json](evidence/ci-verification.json) para a revisão exata e o resultado; o relatório local inicial tem escopo próprio.

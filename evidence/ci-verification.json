@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "project": "trilha-credito",
+  "tested_source_commit": "59b86533b3a5a60bb5e0f8315b3bc89d0297d968",
+  "ci_url": "https://github.com/Dritcmg/trilha-credito/actions/runs/40731638148",
+  "tests": 58,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "postgres_verified": true,
+  "source_fingerprint_matches_local": true,
+  "source_fingerprint": "718901b2c71a56242095c5adc3e4b78cf4288dd08f5b61564b9ca940853ef1f0",
+  "dependency_audit": "PASSED",
+  "recorded_at": "2026-10-28T17:01:50.777690+00:00",
+  "scope": "Synthetic-data portfolio; AI assistance declared. CI artifact downloaded and inspected."
+}
